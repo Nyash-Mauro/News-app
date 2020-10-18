@@ -63,3 +63,20 @@ def process_sources(sources_list):
             id, name, description, url, category, language, country)
         sources_results.append(sources_object)
     return sources_results
+
+
+def get_articles(id):
+    """
+    Function that processes the articles and return a list of articles objects
+    """
+    get_articles_url = articles_url.format(id, api_key)
+    print('###get_articles_url###')
+    print(get_articles_url)
+    with urllib.request.urlopen(get_articles_url) as url:
+        articles_results = json.loads(url.read())
+        articles_object = None
+        if articles_object['articles']:
+            articles_object = process_articles(articles_results['articles'])
+    return articles_object
+
+
