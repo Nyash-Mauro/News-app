@@ -8,7 +8,7 @@ manager = Manager(app)
 manager.add_command('server',Server)
 @manager.command
 def test():
-    """ Run the unit tests """
+    """ Run the unit testing """
     import unittest
     tests = unittest.TestLoader().discover('tests')
     unittest.TestTestRunner(verbosity=2).run(tests)
