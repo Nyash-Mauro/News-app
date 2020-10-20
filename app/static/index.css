@@ -1,0 +1,35 @@
+
+.container-fluid{
+    background-image: url("https://pixabay.com/photos/sunset-sun-evening-sky-clouds-2021266/");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    text-align: center;
+    background-color: #76bdf7;
+    color: black;
+  }
+  
+  h3 {
+    text-align: center;
+    color:rgb(26, 25, 24);
+    margin-bottom: 70px;
+    text-transform: uppercase;
+    font-size: 30px;
+  }
+  
+  h3 {
+    color: blue;
+    font-family: 'Playball', cursive;
+    font-size: 50px;
+  }
+  .navbar-brand{
+    color: black;
+  }
+  
+  
+  p{
+    font-size:20px;
+  }

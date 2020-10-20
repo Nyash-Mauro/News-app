@@ -1,9 +1,10 @@
+from flask import Blueprint
+main = Blueprint('main', __name__)
 from config import config_options
 from flask_bootstrap import Bootstrap
 from . import views, errors
 from flask import Flask
-from flask import Blueprint
-main = Blueprint('main', __name__)
+
 
 
 def create_app(config_name):
