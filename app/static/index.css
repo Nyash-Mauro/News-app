@@ -6,7 +6,7 @@
   box-shadow: 0 4px 8px 0 rgba(24, 23, 23, 0.2);
   padding: 10px;
   text-align: center;
-  background-color: #f8734b;
+  background-color: #f8734b !important;
   color: black;
 }
 
@@ -19,7 +19,7 @@ h3 {
 }
 
 h3 {
-  color: blue;
+  color: blue !important;
   font-family: "Playball", cursive;
   font-size: 50px;
 }

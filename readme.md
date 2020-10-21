@@ -14,9 +14,9 @@ News detail display
 
 ## Installation
 Step to view this application :
-1 Clone this repo. ()
+1 Clone this repo. ('https://github.com/Nyash-Mauro/News-app.git')
 
-2 Open the repo using your preffered text editor e.g vscode.
+2 Open the repo using your preffered text editor e.g vscode,atom
 
 3 Run the test file to confirm that all the test passes.
 
