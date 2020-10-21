@@ -2,6 +2,7 @@ from  .models import Sources, Articles
 from datetime import datetime
 import json
 import urllib.request
+import os
 
 # getting the api key
 api_key = None
@@ -17,7 +18,7 @@ articles_url = None
 
 def configure_request(app):
     global api_key, base_url, articles_url
-    api_key = app.config['NEWS_API_KEY']
+    api_key = os.environ.get('NEWS_API_KEY')
     base_url = app.config['NEWS_SOURCES_BASE_URL']
     articles_url = app.config['ARTICLES_BASE_URL']
 
@@ -28,7 +29,7 @@ def get_sources(category):
     '''
     Function that gets the json response to our url request
     '''
-    get_sources_url = base_url.format(category,api_key)
+    get_sources_url = base_url.format('sources',api_key, category)
 
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
