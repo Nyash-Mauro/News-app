@@ -25,20 +25,22 @@ def configure_request(app):
 
 
 def get_sources(category):
-    """
-        Function that gets the json response to our url request
-    """
-    get_sources_url = base_url.format(category, api_key)
-    print('###get_sources_url###')
-    print(get_sources_url)
+    '''
+    Function that gets the json response to our url request
+    '''
+    get_sources_url = base_url.format(category,api_key)
+
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
         get_sources_response = json.loads(get_sources_data)
-        sources_results = None
+
+        source_results = None
+
         if get_sources_response['sources']:
-            sources_results_list = get_sources_response['sources']
-            sources_results = process_sources(sources_results_list)
-    return sources_results
+            sources_results_list =  get_sources_response['sources']
+            source_results = process_sources(sources_results_list)
+
+    return source_results  
 
 
 def process_sources(sources_list):
@@ -69,8 +71,7 @@ def get_articles(id):
     Function that processes the articles and return a list of articles objects
     """
     get_articles_url = articles_url.format(id, api_key)
-    print('###get_articles_url###')
-    print(get_articles_url)
+    
     with urllib.request.urlopen(get_articles_url) as url:
         articles_results = json.loads(url.read())
         articles_object = None
@@ -93,8 +94,10 @@ def process_articles(articles_list):
         image = article_item.get('urlToImage')
         date = article_item.get('publishedAt')
 
-        articles_result = Articles(id,author,title,description,url,image,date)
-        articles_object.append(articles_result)
+        if image:
+            articles_result = Articles(id,author,title,description,url,image,date)
+            articles_object.append(articles_result)
+
 
 
     return articles_object
